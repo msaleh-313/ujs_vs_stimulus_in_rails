@@ -1,0 +1,18 @@
+
+<div data-controller="clipboard">
+  PIN: <textarea data-clipboard-target="source" readonly>3737</textarea>
+
+  
+  <button data-action="click->clipboard#copy">Copy to Clipboard
+  </button>
+</div>
+
+<div data-controller="clipboard">
+  PIN: <input data-clipboard-target="source" type="text" value="2-37373737" readonly>
+  <button data-action="clipboard#copy">Copy to Clipboard</button>
+</div>
+
+<div data-controller="clipboard">
+  PIN: <input data-clipboard-target="source" type="text" value="3-37373737" readonly>
+  <a href="#" data-action="clipboard#copy">Copy to Clipboard</a>
+</div>

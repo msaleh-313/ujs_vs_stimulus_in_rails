@@ -10,3 +10,6 @@ application.register("hello", HelloController)
 //register your stimulus controller by typing these two lines
 import SearchController from "./search_controller"
 application.register("search",SearchController)
+
+import ClipboardController from "./clipboard_controller"
+application.register("clipboard",ClipboardController)
