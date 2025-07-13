@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const input = document.getElementById("search-input");
-  input.addEventListener("input", function (event) {
-    console.log("User typed:", event.target.value);
-  });
+  const inputs=document.querySelectorAll("[data-behaviour]")
+  inputs.forEach(function(input){
+    input.addEventListener("input",function(event){
+      const type=input.dataset.behaviour;
+      console.log(`[${type}]:`,event.target.value);
+    })
+  })
 });
