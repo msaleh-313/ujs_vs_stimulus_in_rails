@@ -1,0 +1,22 @@
+<h1>UJS Search Example</h1>
+
+<input type="text" placeholder="Type something..."
+  data-behaviour= "input-search"
+/>
+<br/>
+<br/>
+<br/>
+
+<%= text_field_tag :query,'', placeholder: "i am rails builtin helper" ,data: {behaviour: "live-search"} %>
+
+<br/>
+<br/>
+<br/>
+
+<div data-controller="search">
+  <%=text_field_tag :testing,'', 
+    placeholder: "stimulus field" ,
+    data:{action: "input->search#log"}
+    
+  %>
+</div>
