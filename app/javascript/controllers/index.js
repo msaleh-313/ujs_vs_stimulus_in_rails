@@ -13,3 +13,6 @@ application.register("search",SearchController)
 
 import ClipboardController from "./clipboard_controller"
 application.register("clipboard",ClipboardController)
+
+import SlideshowController from "./slideshow_controller"
+application.register("slideshow",SlideshowController)
