@@ -1,44 +1,45 @@
 import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
 
-  static targets=["slide"];
+  static targets = ["slide"];
+  static values = { index: {type: Number,default: 0} }
 
   //We initialize the controller by showing the first slide,
   initialize(){
-    this.index=0;  //the currently selected slide
-    this.showCurrentSlide();
+    this.showCurrentSlide();  
   }
 
   //rewind the current slide.
   previous(){
-    if(this.index==0){
-      this.index=this.slideTargets.length-1;
+    if(this.indexValue==0){
+      this.indexValue=this.slideTargets.length-1;
     }else{
-      this.index--;
+      this.indexValue--;
     }
-    this.showCurrentSlide();
   }
 
   //advance the current slide.
   next(){
-    if(this.index==this.slideTargets.length-1){
-      this.index=0;
+    if(this.indexValue==this.slideTargets.length-1){
+      this.indexValue=0;
     }else{
-      this.index++;
+      this.indexValue++;    
     }
+  }
+
+  //it is called whenever the state is changed
+  indexValueChanged(){
     this.showCurrentSlide();
   }
 
   showCurrentSlide(){
     this.slideTargets.forEach((element,index)=> {
-      if (index==this.index){
+      if (index==this.indexValue){
         element.hidden=false;
       } else{
         element.hidden=true;
       }
     });
   }
-
-  
 
 }
