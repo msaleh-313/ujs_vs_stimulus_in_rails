@@ -7,4 +7,7 @@ class SearchesController < ApplicationController
 
   def clipboard_action
   end
+
+  def slideShow
+  end
 end
